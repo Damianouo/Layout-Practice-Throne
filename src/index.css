@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+@plugin "@tailwindcss/typography";
+@plugin "daisyui" {
+    themes: cupcake --default, dracula --prefersdark;
+}
+
+
+@theme{
+    --color-body: #17171e;
+    --default-font-family: "Lexend", sans-serif;
+    --default-transition-duration: 250ms;
+}
+
+@layer components {
+    .p-page {
+        @apply px-8 py-10;
+    }
+
+    .icon {
+        @apply size-6;
+    }
+}
+
+@layer base {
+    html {
+        scrollbar-gutter: stable;
+    }
+}
