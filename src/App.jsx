@@ -9,6 +9,7 @@ import Login from "./pages/Login.jsx";
 import Wishlist from "./pages/Wishlist.jsx";
 import Collections from "./pages/Collections.jsx";
 import Gifters from "./pages/Gifters.jsx";
+import { userLoader } from "./loaders/userLoader.jsx";
 
 const router = createBrowserRouter([
   {
@@ -19,7 +20,9 @@ const router = createBrowserRouter([
       { index: true, element: <Home /> },
       { path: "/login", element: <Login /> },
       {
-        path: "*",
+        path: ":userId",
+        id: "user",
+        loader: userLoader,
         element: <User />,
         children: [
           { index: true, element: <Wishlist /> },

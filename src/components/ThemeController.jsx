@@ -7,7 +7,7 @@ function ThemeController() {
     return window.matchMedia("(prefers-color-scheme: dark)").matches;
   });
   useEffect(() => {
-    const theme = isDark ? "dark" : "cupcake";
+    const theme = isDark ? "dark" : "garden";
     document.documentElement.setAttribute("data-theme", theme);
     localStorage.setItem("theme", theme);
   }, [isDark]);
