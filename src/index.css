@@ -2,9 +2,9 @@
 
 @plugin "@tailwindcss/typography";
 @plugin "daisyui" {
-    themes: cupcake --default, dracula --prefersdark;
+    themes: garden --default, dracula --prefersdark;
+    exclude: rootscrollgutter;
 }
-
 
 @theme{
     --color-body: #17171e;
@@ -12,18 +12,44 @@
     --default-transition-duration: 250ms;
 }
 
-@layer components {
-    .p-page {
-        @apply px-8 py-10;
-    }
+@utility btn {
+    @apply text-base;
+}
 
-    .icon {
-        @apply size-6;
+@utility btn-outline {
+    @apply border-base-content/10 ;
+}
+
+@utility menu {
+    @apply text-base;
+}
+
+@utility select {
+    @apply transition-colors ;
+    &:focus {
+        @apply outline-none border-primary;
     }
 }
 
+@utility drawer-side {
+    @apply z-50;
+}
+
+@utility p-page {
+    @apply px-8 py-10;
+}
+
+@utility icon {
+    @apply size-6;
+}
+
 @layer base {
+
     html {
         scrollbar-gutter: stable;
     }
+}
+
+:root {
+    scrollbar-color: var(--color-neutral) var(--color-base-100);
 }

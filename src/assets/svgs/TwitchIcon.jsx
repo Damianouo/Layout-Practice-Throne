@@ -1,6 +1,6 @@
 import { cn } from "../../utils/cn.js";
 
-function CartIcon({ className }) {
+function TwitchIcon({ className }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -12,15 +12,14 @@ function CartIcon({ className }) {
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className={cn("icon size-8", className)}
+      className={cn("icon", className)}
     >
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-      <path d="M6 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-      <path d="M17 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-      <path d="M17 17h-11v-14h-2" />
-      <path d="M6 5l14 1l-1 7h-13" />
+      <path d="M4 5v11a1 1 0 0 0 1 1h2v4l4 -4h5.584c.266 0 .52 -.105 .707 -.293l2.415 -2.414c.187 -.188 .293 -.442 .293 -.708v-8.585a1 1 0 0 0 -1 -1h-14a1 1 0 0 0 -1 1z" />
+      <path d="M16 8l0 4" />
+      <path d="M12 8l0 4" />
     </svg>
   );
 }
 
-export default CartIcon;
+export default TwitchIcon;
