@@ -12,7 +12,7 @@ function MenuIcon({ className }) {
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className={cn("icon")}
+      className={cn("icon", className)}
     >
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M4 6l16 0" />

@@ -7,6 +7,7 @@ import ShareIcon from "../../assets/svgs/ShareIcon.jsx";
 import TwitchIcon from "../../assets/svgs/TwitchIcon.jsx";
 import InstagramIcon from "../../assets/svgs/InstagramIcon.jsx";
 import XIcon from "../../assets/svgs/XIcon.jsx";
+import { cn } from "../../utils/cn.js";
 
 const variants = {
   hidden: { opacity: 0 },
@@ -53,7 +54,7 @@ function StableOutlet() {
 function UserInfo() {
   const userData = useLoaderData();
   return (
-    <div className="mx-auto w-full max-w-[1420px] px-8 py-2">
+    <div className="mx-auto w-full max-w-[1420px] px-4 py-2 md:px-8">
       {/*bg image*/}
       <div className="skeleton relative h-32 md:h-48 lg:h-56 xl:h-64">
         <img
@@ -61,7 +62,7 @@ function UserInfo() {
           src={userData.bgImage}
           alt="user background image"
         />
-        <div className="skeleton absolute -bottom-12 left-8 size-24 overflow-hidden rounded-full md:-bottom-16 md:size-32">
+        <div className="skeleton absolute -bottom-12 left-4 size-24 overflow-hidden rounded-full sm:left-8 md:-bottom-16 md:size-32">
           <img
             className="h-full w-full object-cover object-center"
             src={userData.avatarImage}
@@ -70,19 +71,12 @@ function UserInfo() {
         </div>
       </div>
       {/*buttons*/}
-      <div className="flex items-center justify-end gap-2 py-4">
-        <button className="btn btn-primary">
-          <PlusIcon className="size-4" />
-          <span>Follow</span>
-        </button>
-        <button className="btn btn-outline btn-accent">
-          <BulbIcon className="size-4" />
-          <span>Suggest Gift</span>
-        </button>
-        <ShareButton />
+      <div className="flex h-16 items-center justify-end sm:h-18">
+        <UserBtns className="hidden sm:flex" />
       </div>
+
       {/*username, desc, social links*/}
-      <div className="text-base-content/60 mt-2 text-sm">
+      <div className="text-base-content/60 text-sm">
         <h2 className="text-base-content text-3xl font-semibold">{userData.username}</h2>
         <p className="">@{userData.id}</p>
         <p className="my-4">{userData.desc}</p>
@@ -101,6 +95,23 @@ function UserInfo() {
           ))}
         </ul>
       </div>
+      <UserBtns className="my-4 flex sm:hidden" />
+    </div>
+  );
+}
+
+function UserBtns({ className }) {
+  return (
+    <div className={cn("flex gap-2", className)}>
+      <button className="btn btn-primary px-2 text-sm sm:px-4 sm:text-base">
+        <PlusIcon className="size-4" />
+        <span>Follow</span>
+      </button>
+      <button className="btn btn-outline btn-accent px-2 text-sm sm:px-4 sm:text-base">
+        <BulbIcon className="size-4" />
+        <span>Suggest Gift</span>
+      </button>
+      <ShareButton />
     </div>
   );
 }
