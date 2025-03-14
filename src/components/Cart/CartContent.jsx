@@ -40,7 +40,7 @@ function CartContent() {
               <BoxIcon />
               <p>Shipping + taxes calculated at checkout</p>
             </div>
-            <button className="btn btn-block btn-primary h-auto py-3">
+            <button className="btn btn-block btn-primary h-auto py-3" disabled={cart.items.length < 1}>
               <span className="text-xl">Checkout</span>
               <ArrowRight />
             </button>

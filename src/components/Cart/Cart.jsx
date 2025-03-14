@@ -1,6 +1,7 @@
 import CartIcon from "../../assets/svgs/CartIcon.jsx";
 import CartContent from "./CartContent.jsx";
 import useCartCtx from "../../hooks/useCartCtx.jsx";
+import { cn } from "../../utils/cn.js";
 
 function Cart() {
   const { cart } = useCartCtx();
@@ -10,7 +11,11 @@ function Cart() {
       <div className="drawer-content">
         {/* Page content here */}
         <div className="indicator">
-          <span className="indicator-item badge badge-primary top-1 right-1 size-6 p-0">
+          <span
+            className={cn("indicator-item badge badge-primary top-1 right-1 size-6 p-0", {
+              hidden: cart.items.length < 1,
+            })}
+          >
             {cart.items.length}
           </span>
           <label
