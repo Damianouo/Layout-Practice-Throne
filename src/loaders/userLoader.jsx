@@ -1,6 +1,3 @@
-import TwitchIcon from "../assets/svgs/TwitchIcon.jsx";
-import InstagramIcon from "../assets/svgs/InstagramIcon.jsx";
-import XIcon from "../assets/svgs/XIcon.jsx";
 import popovic from "../assets/images/popovic.jpg";
 import tasher from "../assets/images/tasher.jpg";
 import aiony from "../assets/images/aiony.jpg";
@@ -27,9 +24,9 @@ const userData = {
   avatarImage: popovic,
   bgImage: tasher,
   socialMedia: [
-    { platform: "twitch", icon: <TwitchIcon />, url: "https://www.twitch.tv/gracelyra" },
-    { platform: "instagram", icon: <InstagramIcon />, url: "https://www.instagram.com/gracelyraa/" },
-    { platform: "x", icon: <XIcon />, url: "https://x.com/gracelyra666" },
+    { platform: "twitch", url: "https://www.twitch.tv/gracelyra" },
+    { platform: "instagram", url: "https://www.instagram.com/gracelyraa/" },
+    { platform: "x", url: "https://x.com/gracelyra666" },
   ],
   wishlist: {
     "Dress Me Up": [
